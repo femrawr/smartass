@@ -1,0 +1,17 @@
+{
+  "name": "smartass-userscript",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "femrawr",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1"
+  }
+}
