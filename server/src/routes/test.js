@@ -1,22 +1,20 @@
 import express from 'express';
-import { exec } from 'child_process';
+
+import constants from '../utils/constants.js';
 
 const router = express.Router();
 
 router.get('/test', (_, res) => {
-    console.log('debugging: ' + process.env.DEBUG);
+    const msg = 'debugging: ' + constants.debug;
+    console.log(msg);
 
-    exec('start calc', (err) => {
-        if (!err) {
-            return res
-                .status(200)
-                .send('BALLS');
-        }
-
-        return res
-            .status(500)
-            .send('failed to open calc');
-    });
+    return res
+        .status(constants.status.OK)
+        .json({
+            success: true,
+            message: msg,
+            data: null
+        });
 });
 
 export default router;
